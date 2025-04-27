@@ -59,6 +59,12 @@
   opacity: 1;
 }
 
+/* Tooltip shown below for specific hotspots */
+.hotspot .tooltip-below {
+  bottom: auto;
+  top: 125%; /* Show below instead of above */
+}
+
 .hotspot .tooltip-below::after {
   top: auto;
   bottom: 100%;
