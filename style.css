@@ -58,3 +58,9 @@
   visibility: visible;
   opacity: 1;
 }
+
+.hotspot .tooltip-below::after {
+  top: auto;
+  bottom: 100%;
+  border-color: transparent transparent #333 transparent; /* Arrow now points up */
+}
