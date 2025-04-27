@@ -1,0 +1,60 @@
+.interactive-map {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.interactive-map img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(0, 123, 255, 0.7); /* Blue semi-transparent */
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Tooltip */
+.hotspot .tooltip {
+  visibility: hidden;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the hotspot */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.hotspot .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Bottom of the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.hotspot:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
