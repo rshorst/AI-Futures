@@ -10,35 +10,17 @@
 <div class="interactive-map">
   <img src="https://raw.githubusercontent.com/rshorst/AI-Futures/main/AI%20Futures.2.jpg" alt="AI Futures Quadrant Map">
 
-  <!-- Hotspots with tooltips -->
-  <div class="hotspot" style="top: 15%; left: 85%;">
-    <span class="tooltip tooltip-below">
-      If we went forward 10 years in time, I think the optimistic view of it will be, we’ll be in this world of maximum human flourishing, traveling the stars, with all the technologies that AI will help bring about. 
-      — <a href="https://time.com/7280740/demis-hassabis-interview/" target="_blank" style="color: #4fc3f7;">Google DeepMind CEO Demis Hassabis (2025)</a>
-    </span>
-  </div>
-
-  <div class="hotspot" style="top: 75%; left: 85%;">
-    <span class="tooltip">
-      These tech advances are sold as morally superior because they purport to rise above human bias, even though they could not exist without data produced through histories of exclusion and discrimination.
-      — <a href="https://www.ruhabenjamin.com/race-after-technology" target="_blank" style="color: #4fc3f7;">Ruha Benjamin (2019)</a>
-    </span>
-  </div>
-  
-  <div class="hotspot" style="top: 75%; left: 10%;">
-    <span class="tooltip">
-      The development of full artificial intelligence could spell the end of the human race….It would take off on its own, and re-design itself at an ever increasing rate. Humans, who are limited by slow biological evolution, couldn’t compete, and would be superseded.
-      — <a href="https://www.bbc.com/news/technology-30290540" target="_blank" style="color: #4fc3f7;">Stephen Hawking (2014)</a>
-    </span>
-  </div>
-
-  <div class="hotspot" style="top: 30%; left: 30%;">
-    <span class="tooltip">
-      If you want to do a job that’s kinda like a hobby, you can do a job... But otherwise, AI and the robots will provide any goods and services that you want.
-      — <a href="https://www.cnn.com/2024/05/23/tech/elon-musk-ai-your-job/index.html" target="_blank" style="color: #4fc3f7;">Elon Musk (2024)</a>
-    </span>
-  </div>
+  <!-- Hotspots -->
+  <div class="hotspot" style="top: 15%; left: 85%;" onclick="showPopup('hassabis', 'top-right')"></div>
+  <div class="hotspot" style="top: 75%; left: 85%;" onclick="showPopup('benjamin', 'bottom-right')"></div>
+  <div class="hotspot" style="top: 75%; left: 10%;" onclick="showPopup('hawking', 'bottom-left')"></div>
+  <div class="hotspot" style="top: 30%; left: 30%;" onclick="showPopup('musk', 'top-left')"></div>
 </div>
 
-</body>
-</html>
+<!-- Popup Box -->
+<div id="popup-box" class="popup-box" onclick="outsideClick(event)">
+  <div id="popup-content" class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+    <div id="quote-text"></div>
+  </div>
+</div>
