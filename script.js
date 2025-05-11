@@ -1,4 +1,4 @@
-function showPopup(source, quadrantClass) {
+function showPopup(source, color) {
   const quotes = {
     hassabis: `“If we went forward 10 years in time, I think the optimistic view of it will be, we’ll be in this world of maximum human flourishing, traveling the stars, with all the technologies that AI will help bring about.” — <a href='https://time.com/7280740/demis-hassabis-interview/' target='_blank'>Demis Hassabis (2025)</a>`,
 
@@ -9,13 +9,9 @@ function showPopup(source, quadrantClass) {
     musk: `“If you want to do a job that’s kinda like a hobby, you can do a job... But otherwise, AI and the robots will provide any goods and services that you want.” — <a href='https://www.cnn.com/2024/05/23/tech/elon-musk-ai-your-job/index.html' target='_blank'>Elon Musk (2024)</a>`
   };
 
-  // Set quote
+  // Set quote and color
   document.getElementById('quote-text').innerHTML = quotes[source];
-
-  // Reset background class
-  const content = document.getElementById('popup-content');
-  content.className = 'popup-content'; // reset base class
-  content.classList.add(quadrantClass); // apply new background
+  document.getElementById('popup-content').style.backgroundColor = color;
 
   // Show popup
   document.getElementById('popup-box').style.display = 'flex';
@@ -25,7 +21,6 @@ function closePopup() {
   document.getElementById('popup-box').style.display = 'none';
 }
 
-// Click-outside to close
 function outsideClick(event) {
   if (!event.target.closest('.popup-content')) {
     closePopup();
