@@ -21,9 +21,9 @@
   cursor: pointer;
 }
 
-/* Popup overlay */
+/* Popup overlay starts hidden */
 .popup-box {
-  display: none;
+  display: none; /* default is hidden */
   position: fixed;
   top: 0;
   left: 0;
@@ -31,12 +31,11 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Base popup content */
+/* Popup content box */
 .popup-content {
   background-color: white;
   padding: 20px;
@@ -47,13 +46,8 @@
   position: relative;
   color: #333;
   border: 2px solid #2b8cc4;
+  transition: background-color 0.3s ease;
 }
-
-/* Optional background tints for each quadrant */
-.top-right    { background-color: #e3f2fd; }  /* Light blue */
-.bottom-right { background-color: #f1f8e9; }  /* Light green */
-.bottom-left  { background-color: #fce4ec; }  /* Light pink */
-.top-left     { background-color: #fff3e0; }  /* Light orange */
 
 .close-btn {
   position: absolute;
